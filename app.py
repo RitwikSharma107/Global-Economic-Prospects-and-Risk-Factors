@@ -44,7 +44,7 @@ def main():
 		selected_year_end = st.slider('End Year', selected_year_start, 2025)
 		path = selected_parameter +" "+selected_method+ ".xlsx"
 		df = pd.read_excel(path)
-		df=df[(df['Country'].isin(country)) & (df["Year"].between(selected_year_start, selected_year_end, inclusive = True)) ]
+		df=df[(df['Country'].isin(country)) & (df["Year"].between(selected_year_start, selected_year_end, inclusive = 'both')) ]
 		df.sort_values(by=['Country','Year'], inplace=True, ascending=True)
 		fig = go.Figure(data=[go.Table(
     header=dict(values=["Year",selected_parameter,"Country"],
