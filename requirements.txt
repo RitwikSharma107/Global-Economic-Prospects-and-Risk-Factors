@@ -1,5 +1,5 @@
 pandas
-numpy
+numpy==1.23
 plotly==4.12.0
 streamlit==0.73.0
 matplotlib
